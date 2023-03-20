@@ -19,7 +19,7 @@ class CarOperateButton extends StatelessWidget {
           height: 80,
           width: 80,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(Icons.shield_outlined, size: 30),
               Text(text),
