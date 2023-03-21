@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:deepsky_flutter/view/car_select_view/car_List_view.dart';
 import 'package:deepsky_flutter/value/string.dart';
 
+import 'package:deepsky_flutter/page/app_setting_page/app_setting_page.dart';
+
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
@@ -11,6 +13,15 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(appTitle),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AppSettingPage()),
+            ),
+          ),
+        ],
       ),
       body: const Padding(
         padding: EdgeInsets.all(10),
