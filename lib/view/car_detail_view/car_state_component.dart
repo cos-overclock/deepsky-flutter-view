@@ -14,13 +14,13 @@ class CarStateComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SvgPicture.asset(
             path,
-            semanticsLabel: 'Default Car',
+            semanticsLabel: 'Car State Icon',
             width: 30,
             colorFilter: ColorFilter.mode(
               on

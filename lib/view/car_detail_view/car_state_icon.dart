@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -33,7 +34,7 @@ class CarStateIcon extends StatelessWidget {
               BlendMode.srcIn,
             ),
           ),
-          Text(
+          AutoSizeText(
             text,
             style: TextStyle(
               color: on
@@ -41,6 +42,7 @@ class CarStateIcon extends StatelessWidget {
                   : Theme.of(context).extension<CustomColors>()!.statecolor,
               fontSize: Theme.of(context).textTheme.bodyLarge!.fontSize,
             ),
+            maxLines: 1,
           ),
         ],
       ),

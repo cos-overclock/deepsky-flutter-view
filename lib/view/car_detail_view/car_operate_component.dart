@@ -32,7 +32,6 @@ class CarOperateComponent extends StatelessWidget {
                   name: carOperate.name,
                   path: carOperate.onPath,
                 ),
-                const VerticalDivider(thickness: 5),
                 CarOperateButton(
                   text: carOperate.offText,
                   name: carOperate.name,
