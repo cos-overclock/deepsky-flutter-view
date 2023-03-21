@@ -12,7 +12,6 @@ class CarListView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final activeCarList = ref.watch(activeCarListProvider);
-    final disableCarList = ref.watch(disableCarListProvider);
 
     return ListView(children: [
       ReorderableListView.builder(
@@ -23,19 +22,6 @@ class CarListView extends ConsumerWidget {
         itemCount: activeCarList.length,
         onReorder: (oldIndex, newIndex) =>
             _onReorder(activeCarList, oldIndex, newIndex),
-        proxyDecorator: (widget, _, __) => Opacity(opacity: 0.5, child: widget),
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-      ),
-      const Divider(indent: 10, endIndent: 10),
-      ReorderableListView.builder(
-        itemBuilder: (context, index) => CarCard(
-          disableCarList[index],
-          key: Key('$index'),
-        ),
-        itemCount: disableCarList.length,
-        onReorder: (oldIndex, newIndex) =>
-            _onReorder(disableCarList, oldIndex, newIndex),
         proxyDecorator: (widget, _, __) => Opacity(opacity: 0.5, child: widget),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),

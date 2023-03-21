@@ -14,12 +14,10 @@ class CarCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: InkWell(
-        onTap: car.connect != 'disable'
-            ? () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => CarDetailPage(car)),
-                )
-            : null,
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => CarDetailPage(car)),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -47,7 +45,7 @@ class CarCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Text(car.connect != 'disable' ? car.connect : ''),
+                  Text(car.connect),
                 ],
               ),
               Padding(
@@ -67,14 +65,10 @@ class CarCard extends StatelessWidget {
                     Row(
                       children: [
                         OutlinedButton(
-                            onPressed:
-                                car.connect != 'disable' ? () => {} : null,
-                            child: const Text('接続')),
+                            onPressed: () => {}, child: const Text('接続')),
                         const VerticalDivider(thickness: 5),
                         OutlinedButton(
-                            onPressed:
-                                car.connect != 'disable' ? () => {} : null,
-                            child: const Text('切断')),
+                            onPressed: () => {}, child: const Text('切断')),
                       ],
                     ),
                   ],
