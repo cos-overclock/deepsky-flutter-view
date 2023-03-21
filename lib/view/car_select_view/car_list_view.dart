@@ -21,7 +21,7 @@ class CarListView extends ConsumerWidget {
           key: Key('$index'),
         ),
         itemCount: activeCarList.length,
-        onReorder: (int oldIndex, int newIndex) =>
+        onReorder: (oldIndex, newIndex) =>
             _onReorder(activeCarList, oldIndex, newIndex),
         proxyDecorator: (widget, _, __) => Opacity(opacity: 0.5, child: widget),
         shrinkWrap: true,
@@ -34,7 +34,7 @@ class CarListView extends ConsumerWidget {
           key: Key('$index'),
         ),
         itemCount: disableCarList.length,
-        onReorder: (int oldIndex, int newIndex) =>
+        onReorder: (oldIndex, newIndex) =>
             _onReorder(disableCarList, oldIndex, newIndex),
         proxyDecorator: (widget, _, __) => Opacity(opacity: 0.5, child: widget),
         shrinkWrap: true,

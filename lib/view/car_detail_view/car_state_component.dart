@@ -1,3 +1,4 @@
+import 'package:deepsky_flutter/value/color/custom_color.g.dart';
 import 'package:flutter/material.dart';
 
 class CarStateComponent extends StatelessWidget {
@@ -20,7 +21,7 @@ class CarStateComponent extends StatelessWidget {
             size: 30,
             color: on
                 ? Theme.of(context).colorScheme.primary
-                : Theme.of(context).colorScheme.error,
+                : Theme.of(context).extension<CustomColors>()!.statecolor,
           ),
           Padding(
               padding: const EdgeInsets.only(left: 10),
@@ -30,7 +31,7 @@ class CarStateComponent extends StatelessWidget {
                   fontSize: 16,
                   color: on
                       ? Theme.of(context).colorScheme.primary
-                      : Theme.of(context).colorScheme.error,
+                      : Theme.of(context).extension<CustomColors>()!.statecolor,
                 ),
               )),
         ],
