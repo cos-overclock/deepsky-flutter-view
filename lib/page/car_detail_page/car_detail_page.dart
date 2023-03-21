@@ -17,7 +17,12 @@ class CarDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(car.name)),
+      appBar: AppBar(
+        title: Text(car.name),
+        actions: [
+          IconButton(onPressed: () => {}, icon: const Icon(Icons.settings))
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
