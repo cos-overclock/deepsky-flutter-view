@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:deepsky_flutter/value/color/custom_color.g.dart';
 
 class CarStateIcon extends StatelessWidget {
   const CarStateIcon(
-      {super.key, required this.on, required this.name, required this.text});
+      {super.key,
+      required this.on,
+      required this.name,
+      required this.text,
+      required this.path});
 
   final bool on;
   final String name;
   final String text;
+  final String path;
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +22,16 @@ class CarStateIcon extends StatelessWidget {
       width: 80,
       child: Column(
         children: [
-          Icon(
-            name == 'ガード'
-                ? Icons.shield_outlined
-                : name == 'ロック'
-                    ? Icons.lock
-                    : Icons.abc,
-            color: on
-                ? Theme.of(context).colorScheme.primary
-                : Theme.of(context).extension<CustomColors>()!.statecolor,
-            size: 50,
+          SvgPicture.asset(
+            path,
+            semanticsLabel: 'State Icon',
+            width: 50,
+            colorFilter: ColorFilter.mode(
+              on
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).extension<CustomColors>()!.statecolor!,
+              BlendMode.srcIn,
+            ),
           ),
           Text(
             text,

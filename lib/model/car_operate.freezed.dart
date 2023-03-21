@@ -18,8 +18,11 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CarOperate {
   String get name => throw _privateConstructorUsedError;
   String get stateText => throw _privateConstructorUsedError;
+  String get statePath => throw _privateConstructorUsedError;
   String get onText => throw _privateConstructorUsedError;
+  String get onPath => throw _privateConstructorUsedError;
   String get offText => throw _privateConstructorUsedError;
+  String get offPath => throw _privateConstructorUsedError;
   bool get on => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -34,7 +37,14 @@ abstract class $CarOperateCopyWith<$Res> {
       _$CarOperateCopyWithImpl<$Res, CarOperate>;
   @useResult
   $Res call(
-      {String name, String stateText, String onText, String offText, bool on});
+      {String name,
+      String stateText,
+      String statePath,
+      String onText,
+      String onPath,
+      String offText,
+      String offPath,
+      bool on});
 }
 
 /// @nodoc
@@ -52,8 +62,11 @@ class _$CarOperateCopyWithImpl<$Res, $Val extends CarOperate>
   $Res call({
     Object? name = null,
     Object? stateText = null,
+    Object? statePath = null,
     Object? onText = null,
+    Object? onPath = null,
     Object? offText = null,
+    Object? offPath = null,
     Object? on = null,
   }) {
     return _then(_value.copyWith(
@@ -65,13 +78,25 @@ class _$CarOperateCopyWithImpl<$Res, $Val extends CarOperate>
           ? _value.stateText
           : stateText // ignore: cast_nullable_to_non_nullable
               as String,
+      statePath: null == statePath
+          ? _value.statePath
+          : statePath // ignore: cast_nullable_to_non_nullable
+              as String,
       onText: null == onText
           ? _value.onText
           : onText // ignore: cast_nullable_to_non_nullable
               as String,
+      onPath: null == onPath
+          ? _value.onPath
+          : onPath // ignore: cast_nullable_to_non_nullable
+              as String,
       offText: null == offText
           ? _value.offText
           : offText // ignore: cast_nullable_to_non_nullable
+              as String,
+      offPath: null == offPath
+          ? _value.offPath
+          : offPath // ignore: cast_nullable_to_non_nullable
               as String,
       on: null == on
           ? _value.on
@@ -90,7 +115,14 @@ abstract class _$$_CarOperateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String name, String stateText, String onText, String offText, bool on});
+      {String name,
+      String stateText,
+      String statePath,
+      String onText,
+      String onPath,
+      String offText,
+      String offPath,
+      bool on});
 }
 
 /// @nodoc
@@ -106,8 +138,11 @@ class __$$_CarOperateCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
     Object? stateText = null,
+    Object? statePath = null,
     Object? onText = null,
+    Object? onPath = null,
     Object? offText = null,
+    Object? offPath = null,
     Object? on = null,
   }) {
     return _then(_$_CarOperate(
@@ -119,13 +154,25 @@ class __$$_CarOperateCopyWithImpl<$Res>
           ? _value.stateText
           : stateText // ignore: cast_nullable_to_non_nullable
               as String,
+      statePath: null == statePath
+          ? _value.statePath
+          : statePath // ignore: cast_nullable_to_non_nullable
+              as String,
       onText: null == onText
           ? _value.onText
           : onText // ignore: cast_nullable_to_non_nullable
               as String,
+      onPath: null == onPath
+          ? _value.onPath
+          : onPath // ignore: cast_nullable_to_non_nullable
+              as String,
       offText: null == offText
           ? _value.offText
           : offText // ignore: cast_nullable_to_non_nullable
+              as String,
+      offPath: null == offPath
+          ? _value.offPath
+          : offPath // ignore: cast_nullable_to_non_nullable
               as String,
       on: null == on
           ? _value.on
@@ -141,8 +188,11 @@ class _$_CarOperate with DiagnosticableTreeMixin implements _CarOperate {
   const _$_CarOperate(
       {required this.name,
       required this.stateText,
+      required this.statePath,
       required this.onText,
+      required this.onPath,
       required this.offText,
+      required this.offPath,
       required this.on});
 
   @override
@@ -150,15 +200,21 @@ class _$_CarOperate with DiagnosticableTreeMixin implements _CarOperate {
   @override
   final String stateText;
   @override
+  final String statePath;
+  @override
   final String onText;
   @override
+  final String onPath;
+  @override
   final String offText;
+  @override
+  final String offPath;
   @override
   final bool on;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CarOperate(name: $name, stateText: $stateText, onText: $onText, offText: $offText, on: $on)';
+    return 'CarOperate(name: $name, stateText: $stateText, statePath: $statePath, onText: $onText, onPath: $onPath, offText: $offText, offPath: $offPath, on: $on)';
   }
 
   @override
@@ -168,8 +224,11 @@ class _$_CarOperate with DiagnosticableTreeMixin implements _CarOperate {
       ..add(DiagnosticsProperty('type', 'CarOperate'))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('stateText', stateText))
+      ..add(DiagnosticsProperty('statePath', statePath))
       ..add(DiagnosticsProperty('onText', onText))
+      ..add(DiagnosticsProperty('onPath', onPath))
       ..add(DiagnosticsProperty('offText', offText))
+      ..add(DiagnosticsProperty('offPath', offPath))
       ..add(DiagnosticsProperty('on', on));
   }
 
@@ -181,14 +240,18 @@ class _$_CarOperate with DiagnosticableTreeMixin implements _CarOperate {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.stateText, stateText) ||
                 other.stateText == stateText) &&
+            (identical(other.statePath, statePath) ||
+                other.statePath == statePath) &&
             (identical(other.onText, onText) || other.onText == onText) &&
+            (identical(other.onPath, onPath) || other.onPath == onPath) &&
             (identical(other.offText, offText) || other.offText == offText) &&
+            (identical(other.offPath, offPath) || other.offPath == offPath) &&
             (identical(other.on, on) || other.on == on));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, name, stateText, onText, offText, on);
+  int get hashCode => Object.hash(runtimeType, name, stateText, statePath,
+      onText, onPath, offText, offPath, on);
 
   @JsonKey(ignore: true)
   @override
@@ -201,8 +264,11 @@ abstract class _CarOperate implements CarOperate {
   const factory _CarOperate(
       {required final String name,
       required final String stateText,
+      required final String statePath,
       required final String onText,
+      required final String onPath,
       required final String offText,
+      required final String offPath,
       required final bool on}) = _$_CarOperate;
 
   @override
@@ -210,9 +276,15 @@ abstract class _CarOperate implements CarOperate {
   @override
   String get stateText;
   @override
+  String get statePath;
+  @override
   String get onText;
   @override
+  String get onPath;
+  @override
   String get offText;
+  @override
+  String get offPath;
   @override
   bool get on;
   @override

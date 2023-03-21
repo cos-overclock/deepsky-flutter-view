@@ -1,27 +1,33 @@
-import 'package:deepsky_flutter/value/color/custom_color.g.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:deepsky_flutter/value/color/custom_color.g.dart';
 
 class CarStateComponent extends StatelessWidget {
   const CarStateComponent(
-      {super.key, required this.on, required this.text, required this.icon});
+      {super.key, required this.on, required this.text, required this.path});
 
   final bool on;
   final String text;
-  final IconData icon;
+  final String path;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Icon(
-            icon,
-            size: 30,
-            color: on
-                ? Theme.of(context).colorScheme.primary
-                : Theme.of(context).extension<CustomColors>()!.statecolor,
+          SvgPicture.asset(
+            path,
+            semanticsLabel: 'Default Car',
+            width: 30,
+            colorFilter: ColorFilter.mode(
+              on
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).extension<CustomColors>()!.statecolor!,
+              BlendMode.srcIn,
+            ),
           ),
           Padding(
               padding: const EdgeInsets.only(left: 10),

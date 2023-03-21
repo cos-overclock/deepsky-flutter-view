@@ -21,6 +21,7 @@ class CarOperateComponent extends StatelessWidget {
               name: carOperate.name,
               on: carOperate.on,
               text: carOperate.stateText,
+              path: carOperate.statePath,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -29,11 +30,13 @@ class CarOperateComponent extends StatelessWidget {
                 CarOperateButton(
                   text: carOperate.onText,
                   name: carOperate.name,
+                  path: carOperate.onPath,
                 ),
                 const VerticalDivider(thickness: 5),
                 CarOperateButton(
                   text: carOperate.offText,
                   name: carOperate.name,
+                  path: carOperate.offPath,
                 ),
               ],
             ),
