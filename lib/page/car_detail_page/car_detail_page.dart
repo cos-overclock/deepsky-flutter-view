@@ -100,15 +100,13 @@ class CarDetailPage extends StatelessWidget {
               ),
             ),
           ),
-          Consumer(
-            builder: (context, ref, child) => ref.watch(connectStateProvider)
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 20),
-                    child: Consumer(
-                      builder: (context, ref, child) =>
-                          ReorderableListView.builder(
-                        shrinkWrap: true,
+          Flexible(
+            child: Consumer(
+              builder: (context, ref, child) => ref.watch(connectStateProvider)
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 20),
+                      child: ReorderableListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (_, index) => CarOperateComponent(
                           ref.watch(carOperateLostProvider)[index],
@@ -120,9 +118,9 @@ class CarDetailPage extends StatelessWidget {
                             oldIndex,
                             newIndex),
                       ),
-                    ),
-                  )
-                : const SizedBox.shrink(),
+                    )
+                  : const SizedBox.shrink(),
+            ),
           ),
         ],
       ),

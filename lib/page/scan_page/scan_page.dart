@@ -31,46 +31,47 @@ class ScanPage extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: ListView(
-                shrinkWrap: true,
-                children: [
-                  ListTile(
-                    leading: SvgPicture.asset(
-                      sonicStartIconPath,
-                      colorFilter: ColorFilter.mode(
-                        Theme.of(context).colorScheme.primary,
-                        BlendMode.srcIn,
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: ListView(
+                  children: [
+                    ListTile(
+                      leading: SvgPicture.asset(
+                        sonicStartIconPath,
+                        colorFilter: ColorFilter.mode(
+                          Theme.of(context).colorScheme.primary,
+                          BlendMode.srcIn,
+                        ),
+                        width: 30,
                       ),
-                      width: 30,
-                    ),
-                    title: const Text('ソニックスタート'),
-                    subtitle: Text(
-                      'AA:BB:CC:DD:FF',
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
-                    trailing: const Text('-30'),
-                    onTap: () => {},
-                  ),
-                  ListTile(
-                    leading: SvgPicture.asset(
-                      smartGuardIconPath,
-                      colorFilter: ColorFilter.mode(
-                        Theme.of(context).colorScheme.primary,
-                        BlendMode.srcIn,
+                      title: const Text('ソニックスタート'),
+                      subtitle: Text(
+                        'AA:BB:CC:DD:FF',
+                        style: Theme.of(context).textTheme.bodySmall,
                       ),
-                      width: 30,
+                      trailing: const Text('-30'),
+                      onTap: () => {},
                     ),
-                    title: const Text('スマートガード'),
-                    subtitle: Text(
-                      '00:11:22:33:44',
-                      style: Theme.of(context).textTheme.bodySmall,
+                    ListTile(
+                      leading: SvgPicture.asset(
+                        smartGuardIconPath,
+                        colorFilter: ColorFilter.mode(
+                          Theme.of(context).colorScheme.primary,
+                          BlendMode.srcIn,
+                        ),
+                        width: 30,
+                      ),
+                      title: const Text('スマートガード'),
+                      subtitle: Text(
+                        '00:11:22:33:44',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                      trailing: const Text('-40'),
+                      onTap: () => {},
                     ),
-                    trailing: const Text('-40'),
-                    onTap: () => {},
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
