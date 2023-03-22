@@ -46,15 +46,13 @@ class CarDetailPage extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
                       ref.watch(connectStateProvider) ? '接続中' : '切断',
-                      style: TextStyle(
-                        fontSize:
-                            Theme.of(context).textTheme.titleLarge!.fontSize,
-                        color: ref.watch(connectStateProvider)
-                            ? Theme.of(context).colorScheme.onSurface
-                            : Theme.of(context)
-                                .extension<CustomColors>()!
-                                .statecolor!,
-                      ),
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            color: ref.watch(connectStateProvider)
+                                ? Theme.of(context).colorScheme.onSurface
+                                : Theme.of(context)
+                                    .extension<CustomColors>()!
+                                    .statecolor!,
+                          ),
                     ),
                   ),
                 ],

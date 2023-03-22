@@ -30,16 +30,18 @@ class CarStateComponent extends StatelessWidget {
             ),
           ),
           Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: on
-                      ? Theme.of(context).colorScheme.primary
-                      : Theme.of(context).extension<CustomColors>()!.statecolor,
-                ),
-              )),
+            padding: const EdgeInsets.only(left: 10),
+            child: Text(
+              text,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: on
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context)
+                            .extension<CustomColors>()!
+                            .statecolor,
+                  ),
+            ),
+          ),
         ],
       ),
     );

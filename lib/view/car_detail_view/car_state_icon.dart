@@ -36,12 +36,11 @@ class CarStateIcon extends StatelessWidget {
           ),
           AutoSizeText(
             text,
-            style: TextStyle(
-              color: on
-                  ? Theme.of(context).colorScheme.primary
-                  : Theme.of(context).extension<CustomColors>()!.statecolor,
-              fontSize: Theme.of(context).textTheme.bodyLarge!.fontSize,
-            ),
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: on
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).extension<CustomColors>()!.statecolor,
+                ),
             maxLines: 1,
           ),
         ],
