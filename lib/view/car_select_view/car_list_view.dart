@@ -22,7 +22,6 @@ class CarListView extends ConsumerWidget {
       onReorder: (oldIndex, newIndex) =>
           _onReorder(activeCarList, oldIndex, newIndex),
       proxyDecorator: (widget, _, __) => Opacity(opacity: 0.5, child: widget),
-      physics: const NeverScrollableScrollPhysics(),
     );
   }
 

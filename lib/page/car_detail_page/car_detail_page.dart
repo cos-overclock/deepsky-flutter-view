@@ -117,7 +117,6 @@ class CarDetailPage extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 20),
                       child: ReorderableListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (_, index) => CarOperateComponent(
                           ref.watch(carOperateLostProvider)[index],
                           key: Key('$index'),
