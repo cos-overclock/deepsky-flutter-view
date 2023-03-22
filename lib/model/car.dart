@@ -9,5 +9,6 @@ class Car with _$Car {
     required String name,
     required String type,
     required String connect,
+    required String? imagePath,
   }) = _Car;
 }

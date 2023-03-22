@@ -13,37 +13,32 @@ class CarStateComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SvgPicture.asset(
-            path,
-            semanticsLabel: 'Car State Icon',
-            width: 30,
-            colorFilter: ColorFilter.mode(
-              on
-                  ? Theme.of(context).colorScheme.primary
-                  : Theme.of(context).extension<CustomColors>()!.statecolor!,
-              BlendMode.srcIn,
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        SvgPicture.asset(
+          path,
+          semanticsLabel: 'Car State Icon',
+          width: 30,
+          colorFilter: ColorFilter.mode(
+            on
+                ? Theme.of(context).colorScheme.primary
+                : Theme.of(context).extension<CustomColors>()!.statecolor!,
+            BlendMode.srcIn,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text(
-              text,
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: on
-                        ? Theme.of(context).colorScheme.primary
-                        : Theme.of(context)
-                            .extension<CustomColors>()!
-                            .statecolor,
-                  ),
-            ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Text(
+            text,
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: on
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).extension<CustomColors>()!.statecolor,
+                ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

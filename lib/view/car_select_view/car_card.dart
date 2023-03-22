@@ -53,15 +53,22 @@ class CarCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SvgPicture.asset(
-                      defaultCarImagePath,
-                      semanticsLabel: 'Default Car',
-                      width: 150,
-                      colorFilter: ColorFilter.mode(
-                        Theme.of(context).colorScheme.onSurface,
-                        BlendMode.srcIn,
-                      ),
-                    ),
+                    car.imagePath == null
+                        ? SvgPicture.asset(
+                            defaultCarImagePath,
+                            semanticsLabel: 'Default Car',
+                            width: 150,
+                            colorFilter: ColorFilter.mode(
+                              Theme.of(context).colorScheme.onSurface,
+                              BlendMode.srcIn,
+                            ),
+                          )
+                        : Image.asset(
+                            car.imagePath!,
+                            fit: BoxFit.cover,
+                            width: 150,
+                            height: 86,
+                          ),
                     Row(
                       children: [
                         OutlinedButton(

@@ -19,6 +19,7 @@ mixin _$Car {
   String get name => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get connect => throw _privateConstructorUsedError;
+  String? get imagePath => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CarCopyWith<Car> get copyWith => throw _privateConstructorUsedError;
@@ -29,7 +30,7 @@ abstract class $CarCopyWith<$Res> {
   factory $CarCopyWith(Car value, $Res Function(Car) then) =
       _$CarCopyWithImpl<$Res, Car>;
   @useResult
-  $Res call({String name, String type, String connect});
+  $Res call({String name, String type, String connect, String? imagePath});
 }
 
 /// @nodoc
@@ -47,6 +48,7 @@ class _$CarCopyWithImpl<$Res, $Val extends Car> implements $CarCopyWith<$Res> {
     Object? name = null,
     Object? type = null,
     Object? connect = null,
+    Object? imagePath = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -61,6 +63,10 @@ class _$CarCopyWithImpl<$Res, $Val extends Car> implements $CarCopyWith<$Res> {
           ? _value.connect
           : connect // ignore: cast_nullable_to_non_nullable
               as String,
+      imagePath: freezed == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -71,7 +77,7 @@ abstract class _$$_CarCopyWith<$Res> implements $CarCopyWith<$Res> {
       __$$_CarCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String type, String connect});
+  $Res call({String name, String type, String connect, String? imagePath});
 }
 
 /// @nodoc
@@ -86,6 +92,7 @@ class __$$_CarCopyWithImpl<$Res> extends _$CarCopyWithImpl<$Res, _$_Car>
     Object? name = null,
     Object? type = null,
     Object? connect = null,
+    Object? imagePath = freezed,
   }) {
     return _then(_$_Car(
       name: null == name
@@ -100,6 +107,10 @@ class __$$_CarCopyWithImpl<$Res> extends _$CarCopyWithImpl<$Res, _$_Car>
           ? _value.connect
           : connect // ignore: cast_nullable_to_non_nullable
               as String,
+      imagePath: freezed == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -107,7 +118,11 @@ class __$$_CarCopyWithImpl<$Res> extends _$CarCopyWithImpl<$Res, _$_Car>
 /// @nodoc
 
 class _$_Car with DiagnosticableTreeMixin implements _Car {
-  const _$_Car({required this.name, required this.type, required this.connect});
+  const _$_Car(
+      {required this.name,
+      required this.type,
+      required this.connect,
+      required this.imagePath});
 
   @override
   final String name;
@@ -115,10 +130,12 @@ class _$_Car with DiagnosticableTreeMixin implements _Car {
   final String type;
   @override
   final String connect;
+  @override
+  final String? imagePath;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Car(name: $name, type: $type, connect: $connect)';
+    return 'Car(name: $name, type: $type, connect: $connect, imagePath: $imagePath)';
   }
 
   @override
@@ -128,7 +145,8 @@ class _$_Car with DiagnosticableTreeMixin implements _Car {
       ..add(DiagnosticsProperty('type', 'Car'))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('connect', connect));
+      ..add(DiagnosticsProperty('connect', connect))
+      ..add(DiagnosticsProperty('imagePath', imagePath));
   }
 
   @override
@@ -138,11 +156,13 @@ class _$_Car with DiagnosticableTreeMixin implements _Car {
             other is _$_Car &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.connect, connect) || other.connect == connect));
+            (identical(other.connect, connect) || other.connect == connect) &&
+            (identical(other.imagePath, imagePath) ||
+                other.imagePath == imagePath));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, type, connect);
+  int get hashCode => Object.hash(runtimeType, name, type, connect, imagePath);
 
   @JsonKey(ignore: true)
   @override
@@ -155,7 +175,8 @@ abstract class _Car implements Car {
   const factory _Car(
       {required final String name,
       required final String type,
-      required final String connect}) = _$_Car;
+      required final String connect,
+      required final String? imagePath}) = _$_Car;
 
   @override
   String get name;
@@ -163,6 +184,8 @@ abstract class _Car implements Car {
   String get type;
   @override
   String get connect;
+  @override
+  String? get imagePath;
   @override
   @JsonKey(ignore: true)
   _$$_CarCopyWith<_$_Car> get copyWith => throw _privateConstructorUsedError;

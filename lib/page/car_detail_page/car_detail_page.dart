@@ -60,41 +60,51 @@ class CarDetailPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 20, left: 20),
             child: IntrinsicHeight(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SvgPicture.asset(
-                    defaultCarImagePath,
-                    semanticsLabel: 'Default Car',
-                    width: 250,
-                    colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.onSurface,
-                      BlendMode.srcIn,
+                  car.imagePath == null
+                      ? SvgPicture.asset(
+                          defaultCarImagePath,
+                          semanticsLabel: 'Default Car',
+                          width: 250,
+                          colorFilter: ColorFilter.mode(
+                            Theme.of(context).colorScheme.onSurface,
+                            BlendMode.srcIn,
+                          ),
+                        )
+                      : Image.asset(
+                          car.imagePath!,
+                          fit: BoxFit.cover,
+                          width: 250,
+                          height: 140,
+                        ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Consumer(
+                      builder: (context, ref, child) => ref
+                              .watch(connectStateProvider)
+                          ? Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                CarStateComponent(
+                                  path: keyCylinderIconPath,
+                                  on: true,
+                                  text: ': OFF',
+                                ),
+                                CarStateComponent(
+                                  path: doorOpenIconPath,
+                                  on: false,
+                                  text: ': ドア開',
+                                ),
+                              ],
+                            )
+                          : const SizedBox.shrink(),
                     ),
-                  ),
-                  Consumer(
-                    builder: (context, ref, child) => ref
-                            .watch(connectStateProvider)
-                        ? Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              CarStateComponent(
-                                path: keyCylinderIconPath,
-                                on: true,
-                                text: ': OFF',
-                              ),
-                              CarStateComponent(
-                                path: doorOpenIconPath,
-                                on: false,
-                                text: ': ドア開',
-                              ),
-                            ],
-                          )
-                        : const SizedBox.shrink(),
                   ),
                 ],
               ),

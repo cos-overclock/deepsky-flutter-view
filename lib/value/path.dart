@@ -1,5 +1,7 @@
 const String defaultCarImagePath = 'assets/svg/default_car.svg';
 
+const String sampleCarImagePath = 'assets/image/car_image_sample.jpg';
+
 const String smartGuardIconPath = 'assets/svg/ic_smart_guard.svg';
 const String sonicStartIconPath = 'assets/svg/ic_sonicstart.svg';
 
