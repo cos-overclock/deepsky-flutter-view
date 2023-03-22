@@ -24,4 +24,14 @@ final carOperateLostProvider = StateProvider<List<CarOperate>>((ref) => [
         offPath: unlockIconPath,
         on: false,
       ),
+      const CarOperate(
+        name: 'カーサーチ',
+        stateText: 'OFF',
+        statePath: lightOffIconPath,
+        onText: 'カーサーチ',
+        onPath: carSearchIconPath,
+        offText: 'ウェルカム',
+        offPath: welcomeIconPath,
+        on: true,
+      ),
     ]);
